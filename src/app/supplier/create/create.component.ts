@@ -13,7 +13,9 @@ export class CreateComponent implements OnInit {
   phone:"",postalCode:"", region:"",supplierID:0};
   isEditSupplier = true;
   @Input() supplierId: string="";
+  selectContactTitle:any;
   contactTitle = [
+    { name: '--Select--', id: 0 },
     { name: 'Mr', id: 1 },
     { name: 'Mrs', id: 2 },
     { name: 'Dr', id: 3 }
@@ -23,6 +25,7 @@ export class CreateComponent implements OnInit {
   constructor(  private supplierService: SupplierService) { }
   
   ngOnInit(): void {
+    this.selectContactTitle=this.contactTitle[0].name;
    this.loadSupplier();
   }
   public loadSupplier() {
