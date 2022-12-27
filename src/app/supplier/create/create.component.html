@@ -12,7 +12,7 @@
   <mat-label>Contact Title</mat-label>
   <mat-select matInput name="title" [(ngModel)]="contactTitle" placeholder="title">
     <mat-option></mat-option>
-  <mat-option *ngFor="let title of contactTitle" [value]="title.name" >{{ title.name }}</mat-option>
+  <mat-option *ngFor="let title of contactTitle"  >{{ title.name }}</mat-option>
 </mat-select> 
 </mat-form-field>
 
@@ -29,7 +29,6 @@
 <mat-form-field appearance="fill">
   <mat-label>Region</mat-label>
   <input matInput name="Region" [(ngModel)]="supplierInfo.region" />
- 
 </mat-form-field>
 
 <mat-form-field appearance="fill">
@@ -71,4 +70,5 @@
   <button mat-raised-button color="primary">Reset</button>
 </div>
 
-<mat-spinner></mat-spinner>
+<mat-spinner *ngIf="IsBussy === true"   ></mat-spinner>
+

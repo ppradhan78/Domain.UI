@@ -12,3 +12,6 @@ phone :string;
 fax :string; 
 homePage :string; 
 }
+export interface ISupplierInputModel {
+    supplierID:number; 
+    }

@@ -8,6 +8,7 @@ import { CreateComponent } from './supplier/create/create.component';
 import { MaterialModule } from './material.module';
 import { DemoComponent } from './demo/demo.component';
 import { SupplierService } from './service/supplier.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { SupplierService } from './service/supplier.service';
     AppRoutingModule,
     MaterialModule,
     FormsModule,
-    
+    HttpClientModule
   ],
   // providers: [SupplierService],
   providers: [],
