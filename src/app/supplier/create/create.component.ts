@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { ISupplier,ISupplierInputModel } from 'src/app/model/samplemodel';
+import { ISupplier,ISupplierInputModel,ISupplierEditModel } from 'src/app/model/samplemodel';
 import {  SupplierService } from 'src/app/service/supplier.service';
 
 @Component({
@@ -10,6 +10,8 @@ import {  SupplierService } from 'src/app/service/supplier.service';
 export class CreateComponent implements OnInit {
 
   public supplierInfo=<ISupplier>{address:"",city:"",companyName:"",contactName:"",contactTitle:"",country:"",fax:"",homePage:"",
+  phone:"",postalCode:"", region:"",supplierID:0};
+  public supplierDetails=<ISupplierEditModel>{address:"",city:"",companyName:"",contactName:"",contactTitle:"",country:"",fax:"",homePage:"",
   phone:"",postalCode:"", region:"",supplierID:0};
   isEditSupplier = true;
   @Input() supplierId: string="";
@@ -28,9 +30,9 @@ export class CreateComponent implements OnInit {
     this.selectContactTitle=this.contactTitle[0].name;
    this.loadSupplier();
   }
+
   public loadSupplier() {
     var supplierInputDetails = <ISupplierInputModel>{ supplierID: +1 };
-
     this.supplierService.loadSupplier(supplierInputDetails)
     .subscribe((res: ISupplier) => {
       if (res === null) {
@@ -51,6 +53,19 @@ export class CreateComponent implements OnInit {
     var data = this.supplierInfo;
     alert(data.companyName);
     var input = this.validateSupplyerDetails();
+
+    this.supplierService.saveSupplyerDetails(this.supplierDetails)
+    .subscribe((res: ISupplier) => {
+      if (res === null) {
+                            console.error("Error in save");
+                        }
+                        else {
+                            this.supplierInfo = res;
+                        }
+    },
+        _ => {
+            console.error("Error on saveing the supplier information");
+        });
   }
 
   private validateSupplyerDetails(): void {
@@ -59,7 +74,7 @@ export class CreateComponent implements OnInit {
     if (data && data != null) {
       if(data.companyName==""){
       }
-  }
+    }
   }
 
 }

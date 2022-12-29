@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { CreateComponent } from './supplier/create/create.component';
 import { MaterialModule } from './material.module';
-import { DemoComponent } from './demo/demo.component';
 import { SupplierService } from './service/supplier.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SupplierComponent,
     CreateComponent,
-    DemoComponent
   ],
   imports: [
     BrowserModule,
