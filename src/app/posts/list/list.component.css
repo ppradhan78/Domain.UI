@@ -1,0 +1,26 @@
+.col-width-5{
+    width: 5%;
+}
+.col-width-30{
+    width: 30%;
+}
+.col-width-70{
+    width: 70%;
+}
+.mat-mdc-table {
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .mat-column-name {
+    height: 100px;
+  }
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .table-container {
+    height: 300px;
+    overflow: auto;
+  }

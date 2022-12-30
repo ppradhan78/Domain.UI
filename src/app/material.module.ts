@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { NativeDateAdapter, DateAdapter,   MAT_DATE_FORMATS } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,12 +19,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { MatTableModule } from '@angular/material/table' ;
+import {MatSortModule} from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
 const MaterialComponent=[
   MatFormFieldModule,MatSelectModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatNativeDateModule,
   MatCheckboxModule,MatRadioModule,MatIconModule,MatMenuModule,MatGridListModule,MatListModule,
   MatProgressSpinnerModule,MatSliderModule,MatTabsModule,MatTooltipModule,MatTreeModule,
-  MatExpansionModule
+  MatExpansionModule,MatTableModule,MatSortModule,MatCardModule
 ]
 @NgModule({
   imports: [MaterialComponent,ReactiveFormsModule,FormsModule,BrowserAnimationsModule],
